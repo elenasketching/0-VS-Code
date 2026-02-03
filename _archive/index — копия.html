@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Trends 2026</title>
+    
+    <!-- Google Fonts: Cormorant (serif) + Inter (sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3 {
+            font-family: 'Cormorant', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+        
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #5C5C5C;
+        }
+        
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #E8E8E8;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111;
+            text-decoration: none;
+        }
+        
+        nav a {
+            font-size: 0.875rem;
+            color: #5C5C5C;
+            text-decoration: none;
+            margin-left: 32px;
+            transition: color 0.2s ease;
+        }
+        
+        nav a:hover {
+            color: #111;
+        }
+        
+        /* ========== HERO ========== */
+        .hero {
+            padding: 120px 0 96px;
+            text-align: center;
+        }
+        
+        .hero .section-label {
+            margin-bottom: 16px;
+        }
+        
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #5C5C5C;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* ========== KEY POINTS ========== */
+        .key-points {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid #E8E8E8;
+        }
+        
+        .key-point {
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .key-point-number {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        
+        .key-point p {
+            font-size: 0.875rem;
+            color: #5C5C5C;
+        }
+        
+        /* ========== SECTIONS ========== */
+        section {
+            padding: 96px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-header .section-label {
+            margin-bottom: 12px;
+        }
+        
+        .section-line {
+            width: 48px;
+            height: 1px;
+            background: #E8E8E8;
+            margin: 24px auto 0;
+        }
+        
+        /* ========== GALLERY GRID ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ========== GALLERY ITEM ========== */
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            cursor: pointer;
+            background: #F6F5F2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease, opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-label {
+            opacity: 1;
+        }
+        
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox-close::before,
+        .lightbox-close::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 1px;
+            background: #fff;
+        }
+        
+        .lightbox-close::before {
+            transform: rotate(45deg);
+        }
+        
+        .lightbox-close::after {
+            transform: rotate(-45deg);
+        }
+        
+        .lightbox-close:hover::before,
+        .lightbox-close:hover::after {
+            background: #ccc;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s ease;
+        }
+        
+        .lightbox-nav:hover {
+            border-color: #fff;
+        }
+        
+        .lightbox-prev {
+            left: 24px;
+        }
+        
+        .lightbox-next {
+            right: 24px;
+        }
+        
+        .lightbox-nav::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        
+        .lightbox-prev::before {
+            transform: rotate(-135deg);
+            margin-left: 4px;
+        }
+        
+        .lightbox-next::before {
+            transform: rotate(45deg);
+            margin-right: 4px;
+        }
+        
+        lightbox-caption {
+    position: fixed;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1001;  /* ← добавь эту строку */
+}
+
+        
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid #E8E8E8;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 0.75rem;
+            color: #5C5C5C;
+            margin-bottom: 8px;
+        }
+        
+        footer .note {
+            font-style: italic;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Wedding Trends</a>
+            <nav>
+                <a href="#gowns">Gowns</a>
+                <a href="#cakes">Cakes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <p class="section-label">Collection 2026</p>
+            <h1>The Art of Celebration</h1>
+            <p class="hero-subtitle">A curated selection of wedding trends — gowns and cakes that define the season</p>
+            
+            <div class="key-points">
+                <div class="key-point">
+                    <div class="key-point-number">01</div>
+                    <p>Timeless silhouettes with modern details</p>
+                </div>
+                <div class="key-point">
+                    <div class="key-point-number">02</div>
+                    <p>Organic textures and natural elegance</p>
+                </div>
+                <div class="key-point">
+                    <div class="key-point-number">03</div>
+                    <p>Artisanal craftsmanship in every element</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOWNS -->
+    <section id="gowns">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Chapter One</p>
+                <h2>Gowns</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="gallery-grid" data-gallery="gowns">
+                <div class="gallery-item" data-index="0">
+                    <img src="assets/img/dresses/d1.jpg" alt="Wedding gown — Classic fitted silhouette">
+                    <div class="gallery-item-label">Classic Fitted</div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="assets/img/dresses/d2.jpg" alt="Wedding gown — Structured ballgown">
+                    <div class="gallery-item-label">Structured Ballgown</div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="assets/img/dresses/d3.jpg" alt="Wedding gown — Minimalist column">
+                    <div class="gallery-item-label">Minimalist Column</div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="assets/img/dresses/d4.jpg" alt="Wedding gown — Romantic lace">
+                    <div class="gallery-item-label">Romantic Lace</div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="assets/img/dresses/d5.jpg" alt="Wedding gown — Modern sheer">
+                    <div class="gallery-item-label">Modern Sheer</div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="assets/img/dresses/d6.jpg" alt="Wedding gown — Garden elegance">
+                    <div class="gallery-item-label">Garden Elegance</div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="assets/img/dresses/d7.jpg" alt="Wedding gown — Sculptural bow">
+                    <div class="gallery-item-label">Sculptural Bow</div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="assets/img/dresses/d8.jpg" alt="Wedding gown — Timeless A-line">
+                    <div class="gallery-item-label">Timeless A-Line</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAKES -->
+    <section id="cakes">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Chapter Two</p>
+                <h2>Cakes</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="gallery-grid" data-gallery="cakes">
+                <div class="gallery-item" data-index="0">
+                    <img src="assets/img/cakes/c1.jpg" alt="Wedding cake — Floral cascade">
+                    <div class="gallery-item-label">Floral Cascade</div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="assets/img/cakes/c2.jpg" alt="Wedding cake — Minimalist tiers">
+                    <div class="gallery-item-label">Minimalist Tiers</div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="assets/img/cakes/c3.jpg" alt="Wedding cake — Textured buttercream">
+                    <div class="gallery-item-label">Textured Buttercream</div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="assets/img/cakes/c4.jpg" alt="Wedding cake — Garden inspired">
+                    <div class="gallery-item-label">Garden Inspired</div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="assets/img/cakes/c5.jpg" alt="Wedding cake — Organic elegance">
+                    <div class="gallery-item-label">Organic Elegance</div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="assets/img/cakes/c6.jpg" alt="Wedding cake — Classic white">
+                    <div class="gallery-item-label">Classic White</div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="assets/img/cakes/c7.jpg" alt="Wedding cake — Botanical accent">
+                    <div class="gallery-item-label">Botanical Accent</div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="assets/img/cakes/c8.jpg" alt="Wedding cake — Modern sculpture">
+                    <div class="gallery-item-label">Modern Sculpture</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Wedding Trends 2026 · A Visual Collection</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close"></button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+        <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+        
+        let currentGallery = [];
+        let currentIndex = 0;
+        
+        // Get all gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const gallery = item.closest('.gallery-grid');
+                currentGallery = Array.from(gallery.querySelectorAll('.gallery-item'));
+                currentIndex = parseInt(item.dataset.index);
+                openLightbox();
+            });
+        });
+        
+        function openLightbox() {
+            const item = currentGallery[currentIndex];
+            const img = item.querySelector('img');
+            const label = item.querySelector('.gallery-item-label');
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            if (label) {
+    lightboxCaption.textContent = label.textContent;
+    lightboxCaption.style.display = 'block';
+} else {
+    lightboxCaption.style.display = 'none';
+}
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            openLightbox();
+        }
+        
+        function showNext() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            openLightbox();
+        }
+        
+        // Event listeners
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', showPrev);
+        nextBtn.addEventListener('click', showNext);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+    </script>
+
+</body>
+</html>
