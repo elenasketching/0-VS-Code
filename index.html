@@ -6,56 +6,7 @@
     <title>Wedding Trends 2026 — Trend Report: Gowns & Cakes</title>
     <meta name="description" content="Wedding Trends 2026 — a luxury trend report featuring couture gowns and artisanal cakes. A curated editorial selection for designers and event teams.">
     <link rel="canonical" href="https://elenasketching.github.io/0-VS-Code/">
-
-    <!-- SEO Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Wedding Trends">
-    <meta name="theme-color" content="#FFFFFF">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://elenasketching.github.io/0-VS-Code/">
-    <meta property="og:title" content="Wedding Trends 2026 — Trend Report: Gowns & Cakes">
-    <meta property="og:description" content="A luxury trend report featuring couture gowns and artisanal cakes. A curated editorial selection for designers and event teams.">
-    <meta property="og:image" content="https://elenasketching.github.io/0-VS-Code/assets/img/og-cover.jpg">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Wedding Trends">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://elenasketching.github.io/0-VS-Code/">
-    <meta name="twitter:title" content="Wedding Trends 2026 — Trend Report: Gowns & Cakes">
-    <meta name="twitter:description" content="A luxury trend report featuring couture gowns and artisanal cakes. A curated editorial selection for designers and event teams.">
-    <meta name="twitter:image" content="https://elenasketching.github.io/0-VS-Code/assets/img/og-cover.jpg">
-
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Wedding Trends 2026 — Trend Report: Gowns & Cakes",
-        "description": "A luxury trend report featuring couture gowns and artisanal cakes. A curated editorial selection for designers and event teams.",
-        "image": "https://elenasketching.github.io/0-VS-Code/assets/img/og-cover.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "Wedding Trends"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Wedding Trends",
-            "url": "https://elenasketching.github.io/0-VS-Code/"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://elenasketching.github.io/0-VS-Code/"
-        },
-        "datePublished": "2026-01-01",
-        "dateModified": "2026-02-04",
-        "articleSection": ["Wedding Gowns", "Wedding Cakes"],
-        "keywords": ["wedding trends 2026", "wedding gowns", "wedding cakes", "bridal fashion", "wedding inspiration"]
-    }
-    </script>
-
+    
     <!-- Google Fonts: Cormorant (serif) + Inter (sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -243,9 +194,7 @@
             aspect-ratio: 3 / 4;
             overflow: hidden;
             cursor: pointer;
-            background-color: #F6F5F2;
-            background-size: cover;
-            background-position: center;
+            background: #F6F5F2;
         }
         
         .gallery-item img,
@@ -256,18 +205,10 @@
             display: block;
             transition: transform 0.4s ease, opacity 0.3s ease;
         }
-
-        .gallery-item video {
-            opacity: 0;
-        }
         
         .gallery-item:hover img,
         .gallery-item:hover video {
             transform: scale(1.03);
-        }
-
-        .gallery-item:hover video {
-            opacity: 1;
         }
         
         .gallery-item-label {
@@ -307,11 +248,42 @@
             display: flex;
         }
         
-        .lightbox img,
-        .lightbox video {
-            max-width: 100%;
-            max-height: 100%;
+        .lightbox-media-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+        }
+
+        .lightbox-poster,
+        .lightbox-media-container video {
+            position: absolute;
+            max-width: calc(100vw - 80px);
+            max-height: calc(100vh - 120px);
             object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-poster {
+            z-index: 2;
+        }
+
+        .lightbox-poster.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .lightbox-media-container video {
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .lightbox-media-container video.ready {
+            opacity: 1;
+            z-index: 3;
         }
         
         .lightbox-close {
@@ -442,9 +414,6 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
-
     <!-- HERO -->
     <section class="hero">
         <div class="container">
@@ -479,38 +448,38 @@
             </div>
             
             <div class="gallery-grid" data-gallery="gowns">
-                <figure class="gallery-item" data-index="0">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-classic-fitted.mp4" data-full="assets/video/dresses/gowns-classic-fitted.mp4" poster="assets/img/dresses/gowns-classic-fitted.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Classic fitted silhouette"></video>
-                    <figcaption class="gallery-item-label">Classic Fitted</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="1">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-structured-ballgown.mp4" data-full="assets/video/dresses/gowns-structured-ballgown.mp4" poster="assets/img/dresses/gowns-structured-ballgown.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Structured ballgown"></video>
-                    <figcaption class="gallery-item-label">Structured Ballgown</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="2">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-minimalist-column.mp4" data-full="assets/video/dresses/gowns-minimalist-column.mp4" poster="assets/img/dresses/gowns-minimalist-column.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Minimalist column"></video>
-                    <figcaption class="gallery-item-label">Minimalist Column</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="3">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-romantic-lace.mp4" data-full="assets/video/dresses/gowns-romantic-lace.mp4" poster="assets/img/dresses/gowns-romantic-lace.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Romantic lace"></video>
-                    <figcaption class="gallery-item-label">Romantic Lace</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="4">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-modern-sheer.mp4" data-full="assets/video/dresses/gowns-modern-sheer.mp4" poster="assets/img/dresses/gowns-modern-sheer.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Modern sheer"></video>
-                    <figcaption class="gallery-item-label">Modern Sheer</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="5">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-garden-elegance.mp4" data-full="assets/video/dresses/gowns-garden-elegance.mp4" poster="assets/img/dresses/gowns-garden-elegance.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Garden elegance"></video>
-                    <figcaption class="gallery-item-label">Garden Elegance</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="6">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-sculptural-bow.mp4" data-full="assets/video/dresses/gowns-sculptural-bow.mp4" poster="assets/img/dresses/gowns-sculptural-bow.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Sculptural bow"></video>
-                    <figcaption class="gallery-item-label">Sculptural Bow</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="7">
-                    <video class="gallery-media" data-src="assets/video/dresses/gowns-timeless-a-line.mp4" data-full="assets/video/dresses/gowns-timeless-a-line.mp4" poster="assets/img/dresses/gowns-timeless-a-line.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Timeless A-line"></video>
-                    <figcaption class="gallery-item-label">Timeless A-Line</figcaption>
-                </figure>
+                <div class="gallery-item" data-index="0">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-classic-fitted.mp4" data-full="assets/video/dresses/gowns-classic-fitted.mp4" poster="assets/img/dresses/d1.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Classic fitted silhouette"></video>
+                    <div class="gallery-item-label">Classic Fitted</div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-structured-ballgown.mp4" data-full="assets/video/dresses/gowns-structured-ballgown.mp4" poster="assets/img/dresses/d2.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Structured ballgown"></video>
+                    <div class="gallery-item-label">Structured Ballgown</div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-minimalist-column.mp4" data-full="assets/video/dresses/gowns-minimalist-column.mp4" poster="assets/img/dresses/d3.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Minimalist column"></video>
+                    <div class="gallery-item-label">Minimalist Column</div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-romantic-lace.mp4" data-full="assets/video/dresses/gowns-romantic-lace.mp4" poster="assets/img/dresses/d4.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Romantic lace"></video>
+                    <div class="gallery-item-label">Romantic Lace</div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-modern-sheer.mp4" data-full="assets/video/dresses/gowns-modern-sheer.mp4" poster="assets/img/dresses/d5.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Modern sheer"></video>
+                    <div class="gallery-item-label">Modern Sheer</div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-garden-elegance.mp4" data-full="assets/video/dresses/gowns-garden-elegance.mp4" poster="assets/img/dresses/d6.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Garden elegance"></video>
+                    <div class="gallery-item-label">Garden Elegance</div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-sculptural-bow.mp4" data-full="assets/video/dresses/gowns-sculptural-bow.mp4" poster="assets/img/dresses/d7.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Sculptural bow"></video>
+                    <div class="gallery-item-label">Sculptural Bow</div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <video class="gallery-media" data-src="assets/video/dresses/gowns-timeless-a-line.mp4" data-full="assets/video/dresses/gowns-timeless-a-line.mp4" poster="assets/img/dresses/d8.jpg" muted loop playsinline preload="none" aria-label="Wedding gown — Timeless A-line"></video>
+                    <div class="gallery-item-label">Timeless A-Line</div>
+                </div>
             </div>
         </div>
     </section>
@@ -525,43 +494,41 @@
             </div>
             
             <div class="gallery-grid" data-gallery="cakes">
-                <figure class="gallery-item" data-index="0">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-floral-cascade.mp4" data-full="assets/video/cakes/cakes-floral-cascade.mp4" poster="assets/img/cakes/cakes-floral-cascade.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Floral cascade"></video>
-                    <figcaption class="gallery-item-label">Floral Cascade</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="1">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-minimalist-tiers.mp4" data-full="assets/video/cakes/cakes-minimalist-tiers.mp4" poster="assets/img/cakes/cakes-minimalist-tiers.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Minimalist tiers"></video>
-                    <figcaption class="gallery-item-label">Minimalist Tiers</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="2">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-textured-buttercream.mp4" data-full="assets/video/cakes/cakes-textured-buttercream.mp4" poster="assets/img/cakes/cakes-textured-buttercream.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Textured buttercream"></video>
-                    <figcaption class="gallery-item-label">Textured Buttercream</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="3">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-garden-inspired.mp4" data-full="assets/video/cakes/cakes-garden-inspired.mp4" poster="assets/img/cakes/cakes-garden-inspired.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Garden inspired"></video>
-                    <figcaption class="gallery-item-label">Garden Inspired</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="4">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-organic-elegance.mp4" data-full="assets/video/cakes/cakes-organic-elegance.mp4" poster="assets/img/cakes/cakes-organic-elegance.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Organic elegance"></video>
-                    <figcaption class="gallery-item-label">Organic Elegance</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="5">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-classic-white.mp4" data-full="assets/video/cakes/cakes-classic-white.mp4" poster="assets/img/cakes/cakes-classic-white.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Classic white"></video>
-                    <figcaption class="gallery-item-label">Classic White</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="6">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-botanical-accent.mp4" data-full="assets/video/cakes/cakes-botanical-accent.mp4" poster="assets/img/cakes/cakes-botanical-accent.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Botanical accent"></video>
-                    <figcaption class="gallery-item-label">Botanical Accent</figcaption>
-                </figure>
-                <figure class="gallery-item" data-index="7">
-                    <video class="gallery-media" data-src="assets/video/cakes/cakes-modern-sculpture.mp4" data-full="assets/video/cakes/cakes-modern-sculpture.mp4" poster="assets/img/cakes/cakes-modern-sculpture.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Modern sculpture"></video>
-                    <figcaption class="gallery-item-label">Modern Sculpture</figcaption>
-                </figure>
+                <div class="gallery-item" data-index="0">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-floral-cascade.mp4" data-full="assets/video/cakes/cakes-floral-cascade.mp4" poster="assets/img/cakes/c1.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Floral cascade"></video>
+                    <div class="gallery-item-label">Floral Cascade</div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-minimalist-tiers.mp4" data-full="assets/video/cakes/cakes-minimalist-tiers.mp4" poster="assets/img/cakes/c2.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Minimalist tiers"></video>
+                    <div class="gallery-item-label">Minimalist Tiers</div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-textured-buttercream.mp4" data-full="assets/video/cakes/cakes-textured-buttercream.mp4" poster="assets/img/cakes/c3.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Textured buttercream"></video>
+                    <div class="gallery-item-label">Textured Buttercream</div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-garden-inspired.mp4" data-full="assets/video/cakes/cakes-garden-inspired.mp4" poster="assets/img/cakes/c4.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Garden inspired"></video>
+                    <div class="gallery-item-label">Garden Inspired</div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-organic-elegance.mp4" data-full="assets/video/cakes/cakes-organic-elegance.mp4" poster="assets/img/cakes/c5.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Organic elegance"></video>
+                    <div class="gallery-item-label">Organic Elegance</div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-classic-white.mp4" data-full="assets/video/cakes/cakes-classic-white.mp4" poster="assets/img/cakes/c6.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Classic white"></video>
+                    <div class="gallery-item-label">Classic White</div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-botanical-accent.mp4" data-full="assets/video/cakes/cakes-botanical-accent.mp4" poster="assets/img/cakes/c7.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Botanical accent"></video>
+                    <div class="gallery-item-label">Botanical Accent</div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <video class="gallery-media" data-src="assets/video/cakes/cakes-modern-sculpture.mp4" data-full="assets/video/cakes/cakes-modern-sculpture.mp4" poster="assets/img/cakes/c8.jpg" muted loop playsinline preload="none" aria-label="Wedding cake — Modern sculpture"></video>
+                    <div class="gallery-item-label">Modern Sculpture</div>
+                </div>
             </div>
         </div>
     </section>
-
-    </main>
 
     <!-- FOOTER -->
     <footer>
@@ -575,7 +542,10 @@
         <button class="lightbox-close" aria-label="Close"></button>
         <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
         <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
-        <video id="lightbox-video" class="lightbox-media" controls playsinline aria-label="Gallery video"></video>
+        <div class="lightbox-media-container">
+            <img id="lightbox-poster" class="lightbox-poster" src="" alt="">
+            <video id="lightbox-video" class="lightbox-media" controls playsinline aria-label="Gallery video"></video>
+        </div>
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
@@ -584,6 +554,7 @@
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
         const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxPoster = document.getElementById('lightbox-poster');
         const lightboxCaption = document.getElementById('lightbox-caption');
         const closeBtn = document.querySelector('.lightbox-close');
         const prevBtn = document.querySelector('.lightbox-prev');
@@ -641,14 +612,6 @@
             });
         }, { rootMargin: '200px 0px', threshold: 0.1 });
 
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            const video = item.querySelector('video');
-            const poster = video?.getAttribute('poster');
-            if (poster) {
-                item.style.backgroundImage = `url(${poster})`;
-            }
-        });
-
         document.querySelectorAll('.gallery-item video').forEach(video => {
             if (getPreviewSrc(video)) previewObserver.observe(video);
         });
@@ -668,6 +631,12 @@
                 item.addEventListener('mouseenter', () => {
                     ensurePreviewLoaded(video);
                     scheduleFullPrefetch(video);
+                    // Preload poster for lightbox
+                    const posterSrc = video.getAttribute('poster');
+                    if (posterSrc) {
+                        const img = new Image();
+                        img.src = posterSrc;
+                    }
                     if (prefersReducedMotion) return;
                     const playPromise = video.play();
                     if (playPromise) {
@@ -696,20 +665,31 @@
                 const videoSrc = getFullSrc(video) || video.currentSrc || video.src;
                 const videoPoster = video.getAttribute('poster') || '';
 
+                // Show poster immediately, hide video
+                lightboxPoster.src = videoPoster;
+                lightboxPoster.classList.remove('hidden');
+                lightboxVideo.classList.remove('ready');
+
                 lightboxVideo.pause();
                 lightboxVideo.src = videoSrc;
-                lightboxVideo.poster = videoPoster;
                 lightboxVideo.muted = true;
                 lightboxVideo.preload = 'auto';
                 lightboxVideo.currentTime = 0;
                 lightboxVideo.load();
 
-                if (!prefersReducedMotion) {
-                    const playPromise = lightboxVideo.play();
-                    if (playPromise) {
-                        playPromise.catch(() => {});
+                // When video is ready, show it and hide poster
+                const onCanPlay = () => {
+                    lightboxVideo.classList.add('ready');
+                    lightboxPoster.classList.add('hidden');
+                    if (!prefersReducedMotion) {
+                        const playPromise = lightboxVideo.play();
+                        if (playPromise) {
+                            playPromise.catch(() => {});
+                        }
                     }
-                }
+                    lightboxVideo.removeEventListener('canplay', onCanPlay);
+                };
+                lightboxVideo.addEventListener('canplay', onCanPlay);
             }
 
             if (label) {
@@ -738,6 +718,8 @@
             document.body.style.overflow = '';
             lightboxVideo.pause();
             lightboxVideo.currentTime = 0;
+            lightboxVideo.classList.remove('ready');
+            lightboxPoster.classList.remove('hidden');
         }
         
         function showPrev() {
