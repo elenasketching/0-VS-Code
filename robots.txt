@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elenasketching.github.io/0-VS-Code/sitemap.xml
